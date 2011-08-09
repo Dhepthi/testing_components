@@ -27430,3 +27430,208 @@ Processing PeoplesController#index (for 127.0.0.1 at 2011-08-09 22:56:24) [GET]
 Rendering template within layouts/peoples
 Rendering peoples/index
 Completed in 49ms (View: 28, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2011-08-09 23:02:03) [GET]
+  [4;35;1mCountry Load (1.4ms)[0m   [0mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/index
+
+ActionView::TemplateError (undefined local variable or method `notice' for #<ActionView::Base:0xb70420ec>) on line #15 of app/views/layouts/countries.html.erb:
+12: </head>
+13: <body>
+14: 
+15: <p style="color: green"><%= notice %></p>
+16: 
+17: <%= yield %>
+18: 
+
+    app/views/layouts/countries.html.erb:15
+
+Rendered rescues/_trace (154.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2011-08-09 23:12:45) [GET]
+  [4;36;1mCountry Load (8.7ms)[0m   [0;1mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/index
+Completed in 62ms (View: 26, DB: 9) | 200 OK [http://localhost/countries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#new (for 127.0.0.1 at 2011-08-09 23:12:47) [GET]
+  [4;35;1mCountry Columns (48.1ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/new
+Rendered countries/_index (1.5ms)
+Completed in 82ms (View: 24, DB: 49) | 200 OK [http://localhost/countries/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2011-08-09 23:12:55) [GET]
+  [4;35;1mCountry Load (2.0ms)[0m   [0mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/index
+Completed in 17ms (View: 3, DB: 2) | 200 OK [http://localhost/countries]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#new (for 127.0.0.1 at 2011-08-09 23:12:56) [GET]
+  [4;36;1mCountry Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/new
+Rendered countries/_index (0.1ms)
+Completed in 20ms (View: 10, DB: 4) | 200 OK [http://localhost/countries/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#create (for 127.0.0.1 at 2011-08-09 23:13:04) [POST]
+  Parameters: {"country"=>{"name"=>"India"}, "authenticity_token"=>"U0PPGbISnk14abBxVM5e/8/zGbnOjcGnnlqzXU7WC1M="}
+  [4;36;1mCountry Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCountry Create (1.0ms)[0m   [0;1mINSERT INTO `countries` (`name`, `created_at`, `updated_at`) VALUES('India', '2011-08-09 17:43:04', '2011-08-09 17:43:04')[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mCOMMIT[0m
+Rendering countries/create
+Rendered countries/_country (6.7ms)
+Completed in 252ms (View: 188, DB: 22) | 200 OK [http://localhost/countries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2011-08-09 23:13:12) [GET]
+  [4;36;1mCountry Load (0.5ms)[0m   [0;1mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/index
+  [4;35;1mCountry Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 19ms (View: 11, DB: 2) | 200 OK [http://localhost/countries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#new (for 127.0.0.1 at 2011-08-09 23:13:14) [GET]
+  [4;36;1mCountry Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/new
+Rendered countries/_index (7.5ms)
+Completed in 23ms (View: 14, DB: 4) | 200 OK [http://localhost/countries/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeoplesController#index (for 127.0.0.1 at 2011-08-09 23:13:22) [GET]
+  [4;36;1mPeople Load (3.8ms)[0m   [0;1mSELECT * FROM `peoples` [0m
+Rendering template within layouts/peoples
+Rendering peoples/index
+Completed in 30ms (View: 10, DB: 4) | 200 OK [http://localhost/peoples]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeoplesController#new (for 127.0.0.1 at 2011-08-09 23:13:29) [GET]
+  [4;35;1mPeople Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `peoples`[0m
+Rendering template within layouts/peoples
+Rendering peoples/new
+Completed in 51ms (View: 30, DB: 2) | 200 OK [http://localhost/peoples/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeoplesController#index (for 127.0.0.1 at 2011-08-09 23:13:54) [GET]
+  [4;36;1mPeople Load (0.3ms)[0m   [0;1mSELECT * FROM `peoples` [0m
+Rendering template within layouts/peoples
+Rendering peoples/index
+Completed in 26ms (View: 3, DB: 1) | 200 OK [http://localhost/peoples/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeoplesController#show (for 127.0.0.1 at 2011-08-09 23:14:00) [GET]
+  Parameters: {"id"=>"edit"}
+  [4;35;1mPeople Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `peoples`[0m
+  [4;36;1mPeople Load (65.7ms)[0m   [0;1mSELECT * FROM `peoples` WHERE (`peoples`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find People with ID=edit):
+  app/controllers/peoples_controller.rb:21:in `show'
+
+Rendered rescues/_trace (165.3ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeoplesController#edit (for 127.0.0.1 at 2011-08-09 23:14:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPeople Columns (4.8ms)[0m   [0mSHOW FIELDS FROM `peoples`[0m
+  [4;36;1mPeople Load (0.4ms)[0m   [0;1mSELECT * FROM `peoples` WHERE (`peoples`.`id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find People with ID=1):
+  app/controllers/peoples_controller.rb:42:in `edit'
+
+Rendered rescues/_trace (87.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PeoplesController#new (for 127.0.0.1 at 2011-08-09 23:14:07) [GET]
+  [4;35;1mPeople Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `peoples`[0m
+Rendering template within layouts/peoples
+Rendering peoples/new
+Completed in 36ms (View: 16, DB: 2) | 200 OK [http://localhost/peoples/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2011-08-09 23:14:17) [GET]
+  [4;36;1mCountry Load (3.1ms)[0m   [0;1mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/index
+  [4;35;1mCountry Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 39ms (View: 19, DB: 7) | 200 OK [http://localhost/countries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#new (for 127.0.0.1 at 2011-08-09 23:14:19) [GET]
+  [4;36;1mCountry Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (0.1ms)[0m   [0mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/new
+Rendered countries/_index (156.6ms)
+Completed in 187ms (View: 168, DB: 2) | 200 OK [http://localhost/countries/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#edit (for 127.0.0.1 at 2011-08-09 23:14:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCountry Columns (4.3ms)[0m   [0;1mSHOW FIELDS FROM `countries`[0m
+  [4;35;1mCountry Load (4.8ms)[0m   [0mSELECT * FROM `countries` WHERE (`countries`.`id` = 1) [0m
+Rendering template within layouts/countries
+Rendering countries/edit
+Completed in 75ms (View: 45, DB: 9) | 200 OK [http://localhost/countries/1/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CountriesController#index (for 127.0.0.1 at 2011-08-09 23:14:36) [GET]
+  [4;36;1mCountry Load (0.4ms)[0m   [0;1mSELECT * FROM `countries` [0m
+Rendering template within layouts/countries
+Rendering countries/index
+  [4;35;1mCountry Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `countries`[0m
+Completed in 22ms (View: 12, DB: 2) | 200 OK [http://localhost/countries]
