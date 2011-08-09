@@ -2,10 +2,6 @@ class PeoplesController < ApplicationController
 
   # GET /peoples
   # GET /peoples.xml
-  def index2
-    render :layout => false
-  end
-  
   def index
     @peoples = People.all
     @people = People.new
@@ -86,4 +82,13 @@ class PeoplesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def save_markers
+   @markers = Map.new(params[:markers])
+   if @markers.save
+     return render :json => {:error_message => "Markers Saved in DataBase"}
+  else
+    return render :json => {:error_message => "Failed in Saving the Data"}
+  end
+ end
 end

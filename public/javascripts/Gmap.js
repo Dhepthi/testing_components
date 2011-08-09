@@ -53,3 +53,24 @@
 		        }
 		    }
 		}
+
+$(document).ready(function (){
+$("#google_form").find("#storing").click(function(){
+alert("Please click on Map to create Marker");
+$.ajax({
+            type: 'POST',
+            url: '/peoples/save_markers',
+            data: {"markers" : { "marker_name" : "Marker1", "latitude" : 12.33333, "longitude" : 13.555555 }},
+            dataType: 'json',
+            success:function(response){
+
+alert(response.error_message);
+    
+ },
+error: function(xhr) {
+alert("Failure");
+}
+
+});
+});
+});

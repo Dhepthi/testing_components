@@ -68,9 +68,7 @@ deleteMarkers();
 $("#google_form").find("#showing").click(function(){
 showMarkersArray();
 });
-$("#google_form").find("#storing").click(function(){
-alert("Please click on Map to create Marker");
-})
+
 });
 
 function load_content_for_tabs(content)
