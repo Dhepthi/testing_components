@@ -36,6 +36,12 @@ $(document).ready(function (){
             }
         });
     });
+
+$('#new_people').submit(function (){
+        $.post($(this).attr('action'), $(this).serialize(), null, "script");
+        return false;
+    });
+
 $("#new_user").click(function(){
    alert("Need to add path");
 });

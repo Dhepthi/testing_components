@@ -48,14 +48,16 @@ class PeoplesController < ApplicationController
     @people = People.new(params[:people])
     respond_to do |format|
       if @people.save
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @people, :status => :created, :location => @people }
+	format.js 
+        #format.html { render :action => "edit" }
+        #format.xml  { render :xml => @people, :status => :created, :location => @people }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @people.errors, :status => :unprocessable_entity }
       end
     end
   end
+
 
   # PUT /peoples/1
   # PUT /peoples/1.xml
