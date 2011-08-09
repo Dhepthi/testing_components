@@ -48,6 +48,10 @@ $("#new_user").click(function(){
 
 
 });
+function load_content_for_tabs(content)
+{
+$("#tabs").find("#tabs-1").replaceWith(content);
+}
 function alertUser(message){
 		var $alert = $('#alert');
 		$alert.html(message);

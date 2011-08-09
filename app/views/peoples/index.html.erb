@@ -24,11 +24,11 @@
 <div class="heading">Testing Web Components with Rspec and Capybara</div>
 <div id="accordion" style="width:30%;margin-top:3%">
   <div>
-    <h3><a href="#">AutoComplete</a></h3>
+    <h3><%= link_to_field "Auto Complete", "new" %></h3>
     <div>It contains an autocomplete feature</div>
   </div>
   <div>
-    <h3><a href="#">Google Map</a></h3>
+    <h3><%= link_to_field "Google Map", "googlemap" %></h3>
     <div>Sample google map</div>
   </div>
   <div>
@@ -44,11 +44,11 @@
 
 <div id="tabs" style="width:40%;left:31%;top:-160px;">
   <ul>
-    <li><a href="#tabs-1">Live Demo</a></li>
+    <li class="data"><a href="#tabs-1">Live Demo</a></li>
     <li><a href="#tabs-2">Rspec code</a></li>
     <li><a href="#tabs-3">Capybara code</a></li>
   </ul>
   <div id="tabs-1"><%= render :partial => "new" %></div>
-  <div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
-  <div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+  <div id="tabs-2">Here comes a Rspec code</div>
+  <div id="tabs-3">Here come a Capybara code</div>
 </div>
