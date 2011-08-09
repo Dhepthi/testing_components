@@ -8,10 +8,6 @@
  
 $(document).ready(function (){
 
-//   $('#country_submit').click(function (){
-//        $.post($(this).attr('value'), $(this).serialize(), null, "script");
-//        return false;
-//    });
     $('#new_country').submit(function (){
         $.post($(this).attr('action'), $(this).serialize(), null, "script");
         return false;
@@ -42,11 +38,23 @@ $('#new_people').submit(function (){
         return false;
     });
 
-$("#new_user").click(function(){
-   alert("Need to add path");
+$(".auto_complete").click(function(){
+ $("#ajax_feature").css("display","none");
+ $("#google_form").css("display","none");
+ $("#new_people_form").css("display","block");
 });
 
+$(".google_map").click(function(){
+ $("#ajax_feature").css("display","none");
+ $("#new_people_form").css("display","none");
+ $("#google_form").css("display","block");
+});
 
+$(".ajax_feature").click(function(){
+ $("#ajax_feature").css("display","block");
+ $("#google_form").css("display","none");
+ $("#new_people_form").css("display","none");
+});
 });
 function load_content_for_tabs(content)
 {

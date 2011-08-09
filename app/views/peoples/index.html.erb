@@ -24,15 +24,15 @@
 <div class="heading">Testing Web Components with Rspec and Capybara</div>
 <div id="accordion" style="width:30%;margin-top:3%">
   <div>
-    <h3><%= link_to_field "Auto Complete", "new" %></h3>
+    <h3><a href="#" class="auto_complete">Auto Complete Feature</a><%#= link_to_field "Auto Complete", "new" %></h3>
     <div>It contains an autocomplete feature</div>
   </div>
   <div>
-    <h3><%= link_to_field "Google Map", "googlemap" %></h3>
+    <h3><a href="#" class="google_map">Google Map Feature</a><%#= link_to_field "Google Map", "googlemap" %></h3>
     <div>Sample google map</div>
   </div>
   <div>
-    <h3><a href="#">Ajax Feature </a></h3>
+    <h3><a href="#" class="ajax_feature">Ajax Feature </a></h3>
     <div>Makes an dynamic ajax call and updates the data</div>
   </div>
    <div>
@@ -48,7 +48,11 @@
     <li><a href="#tabs-2">Rspec code</a></li>
     <li><a href="#tabs-3">Capybara code</a></li>
   </ul>
-  <div id="tabs-1"><%= render :partial => "new" %></div>
+  <div id="tabs-1">
+   <iframe id="ajax_feature" src = "/countries/new" style="width: 500px; height:400px; overflow:hidden;border:none;display:none"></iframe>
+   <div id="new_people_form" style="display:block"><%= render :partial => "new" %></div>
+   <div id="google_form" style="display:none"><%= render :partial => "googlemap" %></div>
+</div>
   <div id="tabs-2">Here comes a Rspec code</div>
-  <div id="tabs-3">Here come a Capybara code</div>
+  <div id="tabs-3">Here comes a Cabybara </div>
 </div>
