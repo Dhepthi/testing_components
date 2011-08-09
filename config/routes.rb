@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.connect "/countries/get_countries_name",:controller => :countries, :action => "get_countries_name"
+map.connect "/peoples/save_markers",:controller => :peoples, :action => "save_markers"
   map.resources :countries
 
   map.resources :peoples
