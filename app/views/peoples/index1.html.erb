@@ -1,0 +1,52 @@
+<div id="BodyMsg">
+<h1>Listing peoples</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Country</th>
+  </tr>
+
+<% @peoples.each do |people| %>
+  <tr>
+    <td><%=h people.name %></td>
+    <td><%=h people.address %></td>
+    <td><%=h people.country %></td>
+    <td><%= link_to 'Show', people %></td>
+    <td><%= link_to 'Edit', edit_people_path(people) %></td>
+    <td><%= link_to 'Destroy', people, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New people', new_people_path %>
+</div>
+
+<SCRIPT language="javascript">
+
+  Ext.onReady(function(){
+    Ext.QuickTips.init();
+
+    new Ext.Panel({
+      id: 'company-form',
+      title: 'Search Badge Number',
+      hideCollapseTool: false,
+      collapsible: true,
+      collapsed: false,
+      frame:true,
+      titleCollapse: true,
+      layout:'form',
+      width:800,
+      renderTo: document.body ,
+      items:[
+        {
+          contentEl:'BodyMsg'
+
+        }]
+    });
+    
+  });
+</SCRIPT>

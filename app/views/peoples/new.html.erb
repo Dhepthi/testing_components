@@ -1,0 +1,70 @@
+<div id="BodyMsg">
+
+<% form_for(@people) do |f| %>
+  <%= f.error_messages %>
+
+ 
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :Area %><br />
+    <%= f.text_field :address %>
+  </p>
+ 
+  <p>
+    <%= f.label :country_name %><br />
+    <%= text_field :people, :country_name,{:size => 15} %>
+  </p>
+  <br/><br/><br/>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%#= link_to 'Back', peoples_path %>
+  </div>
+<div id="capybara" class="x-hide-display">
+  <p> CapyBara Code comes here</p>
+</div>
+
+<div id="rspec" class="x-hide-display">
+  <p>Rspec Code comes here</p>
+</div>
+
+<SCRIPT language="javascript">
+
+  Ext.onReady(function(){
+    Ext.QuickTips.init();
+
+    new Ext.TabPanel({
+      region: 'center', // a center region is ALWAYS required for border layout
+      deferredRender: false,
+      frame:true,
+      activeTab: 0,
+      width: 500,
+      renderTo: document.body ,
+      defaults:{autoHeight: true},
+      items:[
+        {
+          contentEl:'BodyMsg',
+          title: 'New User Creation',
+          frame:true
+        },
+      {
+         contentEl:'capybara',
+         title: 'CapyBara code',
+         autoScroll: false,
+         frame:true
+      },
+      {
+         contentEl:'rspec',
+         title: 'Rspec code',
+         autoScroll: false,
+         frame:true
+      }]
+    });
+
+  });
+</SCRIPT>

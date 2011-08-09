@@ -1,0 +1,56 @@
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine"/>
+<%= stylesheet_link_tag "start/jquery-ui-1.8.14.custom.css" %>
+<%= javascript_include_tag "jquery-1.5.1.min.js" %>
+<%= javascript_include_tag "jquery-ui-1.8.14.custom.min.js"  %>
+
+<script type="text/javascript">
+  $(function(){
+
+    // Accordion
+    $("#accordion").accordion({ header: "h3" });
+    // Tabs
+    $('#tabs').tabs();
+  });
+
+</script>
+<style type="text/css">
+			/*demo page css*/
+			body{ font: 62.5% "Trebuchet MS", sans-serif; }
+                        .heading {
+                          font-family: 'Tangerine', serif;
+                          font-size: 48px;
+                          text-shadow: 4px 4px 4px #aaa;
+                          text-align: center;
+                        }
+		</style>
+<div class="heading">Testing Web Components with Rspec and Capybara</div>
+<div id="accordion" style="width:30%;margin-top:3%">
+  <div>
+    <h3><a href="#">AutoComplete</a></h3>
+    <div>It contains an autocomplete feature</div>
+  </div>
+  <div>
+    <h3><a href="#">Google Map</a></h3>
+    <div>Sample google map</div>
+  </div>
+  <div>
+    <h3><a href="#">Ajax Feature </a></h3>
+    <div>Makes an dynamic ajax call and updates the data</div>
+  </div>
+   <div>
+    <h3><a href="#">Other components </a></h3>
+    <div>Other components are added in feature</div>
+  </div>
+</div>
+<br/>
+
+<div id="tabs" style="width:40%;left:31%;top:-160px;">
+  <ul>
+    <li><a href="#tabs-1">Live Demo</a></li>
+    <li><a href="#tabs-2">Rspec code</a></li>
+    <li><a href="#tabs-3">Capybara code</a></li>
+  </ul>
+  <div id="tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+  <div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+  <div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+</div>

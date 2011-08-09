@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @people.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @people.address %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @people.country %>
+</p>
+
+
+<%= link_to 'Edit', edit_people_path(@people) %> |
+<%= link_to 'Back', peoples_path %>
