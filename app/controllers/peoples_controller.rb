@@ -1,5 +1,5 @@
 class PeoplesController < ApplicationController
-#before_filter :authenticate_user!,:only => [:index]
+
   # GET /peoples
   # GET /peoples.xml
   def index2

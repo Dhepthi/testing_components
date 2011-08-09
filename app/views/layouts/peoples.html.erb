@@ -5,22 +5,11 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Peoples: <%= controller.action_name %></title>
-  <%#= javascript_include_tag :defaults %>
-  <%= javascript_include_tag "/Ext/adapter/ext/ext-base.js", "/Ext/ext-all.js"%>
  <script src="http://maps.google.com/maps/api/js?sensor=false&maptype=hybrid&libraries=places" type="text/javascript"> </script>
   <%= stylesheet_link_tag 'scaffold' %>
-  <%#= stylesheet_link_tag "/Ext/resources/css/ext-all.css", "/Ext/examples/form/forms.css" %>
-  <%#= javascript_include_tag "jquery-1.4.2.min","jrails"  %>
-  <%#= javascript_include_tag  "jquery.bgiframe.min" %>
- <%#= javascript_include_tag  "jquery.autocomplete" %>
- <%#= javascript_include_tag  "application" %>
- <link type="text/css" href="jquery-ui-1.8.14.custom.css" rel="stylesheet" />
- <script type="text/javascript" src="jquery-1.5.1.min.js"></script>
- <script type="text/javascript" src="jquery-ui-1.8.14.custom.min.js"></script>
+
 </head>
 <body>
-
-<p style="color: green"><%= notice %></p>
 
 <%= yield %>
 

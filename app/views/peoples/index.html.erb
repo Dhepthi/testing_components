@@ -1,150 +1,57 @@
-    <script type="text/javascript">
-    Ext.onReady(function(){
-      
-        var viewport = new Ext.Viewport({
-            layout: 'border',
-            items: [
-            // create instance immediately
-            new Ext.BoxComponent({
-                region: 'north',
-                height: 45, // give north and south regions a height
-                contentEl: 'user_nav'
-                
-            }),/*  {
-                // lazily created panel (xtype:'panel' is default)
-                region: 'south',
-                contentEl: 'south',
-                split: true,
-                height: 100,
-                minSize: 100,
-                maxSize: 200,
-                collapsible: true,
-                title: 'South',
-                margins: '0 0 0 0'
-            },{
-                region: 'east',
-                title: 'East Side',
-                collapsible: true,
-                split: true,
-                width: 225, // give east and west regions a width
-                minSize: 175,
-                maxSize: 400,
-                margins: '0 5 0 0',
-                layout: 'fit', // specify layout manager for items
-                items:            // this TabPanel is wrapped by another Panel so the title will be applied
-                new Ext.TabPanel({
-                    border: false, // already wrapped so don't add another border
-                    activeTab: 1, // second tab initially active
-                    tabPosition: 'bottom',
-                    items: [{
-                        html: '<pA TabPanel component can be a region.</p>',
-                        title: 'A Tab',
-                        autoScroll: true
-                    }, new Ext.grid.PropertyGrid({
-                        title: 'Property Grid',
-                        closable: true,
-                        source: {
-                            "(name)": "Properties Grid",
-                            "grouping": false,
-                            "autoFitColumns": true,
-                            "productionQuality": false,
-                            "created": new Date(Date.parse('10/15/2006')),
-                            "tested": false,
-                            "version": 0.01,
-                            "borderWidth": 1
+   
+ <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine"/>
+<%= stylesheet_link_tag "start/jquery-ui-1.8.14.custom.css" %>
+<%= javascript_include_tag "jquery-1.5.1.min.js" %>
+<%= javascript_include_tag "jquery-ui-1.8.14.custom.min.js"  %>
+
+<script type="text/javascript">
+  $(function(){
+
+    // Accordion
+    $("#accordion").accordion({ header: "h3" });
+    // Tabs
+    $('#tabs').tabs();
+  });
+
+</script>
+<style type="text/css">
+			/*demo page css*/
+			body{ font: 62.5% "Trebuchet MS", sans-serif; }
+                        .heading {
+                          font-family: 'Tangerine', serif;
+                          font-size: 48px;
+                          text-shadow: 4px 4px 4px #aaa;
+                          text-align: center;
                         }
-                    })]
-                })
-            },*/ {
-                region: 'west',
-                id: 'west-panel', // see Ext.getCmp() below
-                title: 'Web Components',
-                split: true,
-                width: 300,
-                minSize: 175,
-                maxSize: 400,
-                collapsible: true,
-                margins: '0 0 0 5',
-                layout: {
-                    type: 'accordion',
-                    animate: true
-                },
-                items: [{
-                   // contentEl: 'west',
-                    title: 'Auto Complete',
-                    border: false,
-                    contentEl: 'lists'
-                }, {
-                    title: 'Google Map',
-                    html: '<p>Map View goes here.</p>',
-                    border: false
-                },
-              {
-                title: 'Other Components',
-                    html: '<p>More Components goes here..</p>',
-                    border: false
-              }]
-            },
-            // in this instance the TabPanel is not wrapped by another panel
-            // since no title is needed, this Panel is added directly
-            // as a Container
-            new Ext.TabPanel({
-                region: 'center', // a center region is ALWAYS required for border layout
-                deferredRender: false,
-                frame:true,
-                activeTab: 0,     // first tab initially active
-                items: [/*{
-                    contentEl: 'center1',
-                    title: 'Close Me',
-                    closable: true,
-                    autoScroll: true
-                }, */{
-                    contentEl: 'center2',
-                    title: 'New User',
-                    autoScroll: false,
-                    closable: true
-                },
-              {
-                contentEl: 'center1',
-                title: 'New Country',
-                autoScroll: true,
-                closable: true
-              }]
-            })]
-        });
-        
-    });
-    
-    </script>
-
-   <div id="user_nav">
-     <center><b><i>Testing Web Components with Rspec and Capybara</i></b></center>
-     <div style ="float:right">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
-     </div>
+		</style>
+<div class="heading">Testing Web Components with Rspec and Capybara</div>
+<div id="accordion" style="width:30%;margin-top:3%">
+  <div>
+    <h3><a href="#">AutoComplete</a></h3>
+    <div>It contains an autocomplete feature</div>
+  </div>
+  <div>
+    <h3><a href="#">Google Map</a></h3>
+    <div>Sample google map</div>
+  </div>
+  <div>
+    <h3><a href="#">Ajax Feature </a></h3>
+    <div>Makes an dynamic ajax call and updates the data</div>
+  </div>
+   <div>
+    <h3><a href="#">Other components </a></h3>
+    <div>Other components are added in feature</div>
+  </div>
 </div>
-    <div id="center2" class="x-hide-display" style="overflow:hidden;" >
-      <%#*<br/><center> New User Creation <br/><br/>%>
-      <%#*<iframe src = "/peoples/new" style="width: 500px; height:600px; overflow:hidden;border:none" ></iframe>%>
-      <%#*</center>%>
-    </div>
-<div id="center1" class="x-hide-display" style="overflow:hidden;" >
-      <br/><center> New Country Creation <br/><br/>
-      <iframe src = "/countries/new" style="width: 500px; height:600px; overflow:hidden;border:none" ></iframe>
-      </center>
-    </div>
-<div id="lists">
+<br/>
+
+<div id="tabs" style="width:40%;left:31%;top:-160px;">
   <ul>
-  <li>&nbsp; &nbsp; <span id="new_user" style="color:blue;text-decoration: underline;cursor: pointer;">New User</span></li>
-  <li> &nbsp; &nbsp;  <a href="#" style="color:blue;">Edit User</a></li>
-   <li>&nbsp; &nbsp;  <a href="#" style="color:blue;"> List Users</a></li>
-  <li> &nbsp; &nbsp;  <a href="#" style="color:blue;"> Delete User</a></li>
+    <li><a href="#tabs-1">Live Demo</a></li>
+    <li><a href="#tabs-2">Rspec code</a></li>
+    <li><a href="#tabs-3">Capybara code</a></li>
   </ul>
+  <div id="tabs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+  <div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+  <div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 </div>
-
- 
