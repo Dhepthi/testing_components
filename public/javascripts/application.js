@@ -46,4 +46,24 @@ $("#new_user").click(function(){
    alert("Need to add path");
 });
 
+
 });
+function alertUser(message){
+		var $alert = $('#alert');
+		$alert.html(message);
+		if ($alert.length) {
+			var alerttimer = window.setTimeout(function(){
+				$alert.trigger('click');
+			},5000);
+			$alert.animate({
+				height: $alert.css('line-height') || '50px'
+			}, 200).click(function(){
+				window.clearTimeout(alerttimer);
+				$alert.animate({
+					height: '0'
+				}, 200);
+			});
+		}
+      $('#new_people')[0].reset();
+	}
+
