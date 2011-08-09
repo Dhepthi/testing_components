@@ -48,6 +48,7 @@ $(".google_map").click(function(){
  $("#ajax_feature").css("display","none");
  $("#new_people_form").css("display","none");
  $("#google_form").css("display","block");
+ google.maps.event.trigger(map, 'resize');
 });
 
 $(".ajax_feature").click(function(){

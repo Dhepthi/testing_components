@@ -16,4 +16,16 @@
 
     map = new google.maps.Map(document.getElementById("sample_map"), myOptions);
 
+    google.maps.event.addListenerOnce(map, "resize", function() { });
+    map.setCenter(myLatlng);
+    google.maps.event.addListener(map,'click', function(e){ 
+	 var  marker = new google.maps.Marker({
+		        position: e.latLng,
+		        flat:true,
+		        title:"Hi"
+		        
+		    });
+           marker.setMap(map);
+    });
+
    
