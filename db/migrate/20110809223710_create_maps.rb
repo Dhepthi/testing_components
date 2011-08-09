@@ -1,9 +1,9 @@
 class CreateMaps < ActiveRecord::Migration
   def self.up
     create_table :maps do |t|
-      t.string :name
-      t.number :latitude
-      t.number :longitude
+      t.string :marker_name
+      t.decimal :latitude, :precision => 9, :scale => 6
+      t.decimal :longitude, :precision => 9, :scale => 6
 
       t.timestamps
     end
