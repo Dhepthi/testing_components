@@ -32,7 +32,7 @@ $(document).ready(function (){
                         })
                     })
                 });
-                $('#people_country_name').autocomplete(autocompleteData);
+                $('#people_country_name').autocomplete({source:autocompleteData});
             }
         });
     });

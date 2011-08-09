@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
   map.connect "/countries/get_countries_name",:controller => :countries, :action => "get_countries_name"
-  map.connect "/peoples/index2",:controller => :peoples, :action => "index2"
   map.resources :countries
 
   map.resources :peoples
