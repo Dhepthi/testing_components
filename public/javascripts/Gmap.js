@@ -1,5 +1,6 @@
  var myLatlng = new google.maps.LatLng(43.385337,-102.75574);
  var map;
+ var markersArray = [];
     var myOptions = {
         zoom: 3, // set the zoom level
         center: myLatlng,  // set the map centre Lat and Long
@@ -22,10 +23,33 @@
 	 var  marker = new google.maps.Marker({
 		        position: e.latLng,
 		        flat:true,
-		        title:"Hi"
+		        map: map
 		        
 		    });
-           marker.setMap(map);
+           markersArray.push(marker);
     });
 
-   
+    function deleteMarkers() {
+            if (markersArray) {
+                for (i in markersArray) {
+                    markersArray[i].setMap(null);
+                }
+                markersArray.length = 0;
+            }
+        }
+
+        function clearMarkersArray() {
+            if (markersArray) {
+                for (i in markersArray) {
+                    markersArray[i].setMap(null);
+                }
+            }
+        }
+
+	 function showMarkersArray() {
+		    if (markersArray) {
+		        for (i in markersArray) {
+		            markersArray[i].setMap(map);
+		        }
+		    }
+		}

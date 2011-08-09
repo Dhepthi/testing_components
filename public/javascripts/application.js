@@ -56,7 +56,23 @@ $(".ajax_feature").click(function(){
  $("#google_form").css("display","none");
  $("#new_people_form").css("display","none");
 });
+
+$("#google_form").find("#clearing").click(function(){
+clearMarkersArray();
 });
+
+$("#google_form").find("#deletion").click(function(){
+deleteMarkers();
+});
+
+$("#google_form").find("#showing").click(function(){
+showMarkersArray();
+});
+$("#google_form").find("#storing").click(function(){
+alert("Please click on Map to create Marker");
+})
+});
+
 function load_content_for_tabs(content)
 {
 $("#tabs").find("#tabs-1").replaceWith(content);
