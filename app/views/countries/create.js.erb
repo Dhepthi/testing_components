@@ -1,4 +1,5 @@
 
-alertUser("Counrty Created Successfully");
 $('#countries').append("<%= escape_javascript(render(:partial => @country )) %>");
 $('#new_country')[0].reset();
+alertUser("Counrty Created Successfully");
+
