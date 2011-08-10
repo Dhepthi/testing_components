@@ -31,6 +31,9 @@
            markersArray.push(marker);
            saveMarker(marker);
            count = count + 1;
+      google.maps.event.addListener(marker,'click',function(){ 
+            deleteMarker(this);
+       });
     });
 
     function deleteMarkers() {
@@ -63,7 +66,7 @@ function saveMarker(markerObject)
 
 $.ajax({
             type: 'GET',
-            url: '/peoples/save_markers',
+            url: '/gmap/save_marker',
             data: {"markers" : { "marker_name" : markerObject.getTitle(), "latitude" : markerObject.getPosition().lat(), "longitude" : markerObject.getPosition().lng()}},
             dataType: 'json',
             success:function(response){
@@ -77,4 +80,24 @@ $.ajax({
 
 }
 
+function deleteMarker(markerObject)
+{
+			$.ajax({
+				    type: 'GET',
+				    url: '/gmap/delete_marker',
+				    data: { "marker_name" : markerObject.getTitle()},
+				    dataType: 'json',
+				    success:function(response){
+				     alertUser(response.error_message);
+ 				     markerObject.setMap(null);
+				     var index = $.inArray(markerObject,markersArray);
+			             markersArray.splice(index,1);
+				      
+				 },
+				error: function(xhr) {
+				alert("Failure");
+				}
+			});
+
+}
 

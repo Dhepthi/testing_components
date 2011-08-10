@@ -83,12 +83,4 @@ class PeoplesController < ApplicationController
     end
   end
 
-  def save_markers
-   @markers = Map.new(params[:markers])
-   if @markers.save
-     return render :json => {:error_message => "Markers Saved in DataBase"}
-  else
-    return render :json => {:error_message => "Failed in Saving the Data"}
-  end
- end
 end
