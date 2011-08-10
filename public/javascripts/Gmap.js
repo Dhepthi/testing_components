@@ -43,6 +43,7 @@
                 }
                 markersArray.length = 0;
             }
+          removeAllMarkers();
         }
 
         function clearMarkersArray() {
@@ -82,16 +83,37 @@ $.ajax({
 
 function deleteMarker(markerObject)
 {
+  var latitude, longitude;
+  latitude = markerObject.getPosition().lat().toFixed(6);
+  longitude = markerObject.getPosition().lng().toFixed(6);
+  
 			$.ajax({
 				    type: 'GET',
 				    url: '/gmap/delete_marker',
-				    data: { "marker_name" : markerObject.getTitle()},
+				    data: {"latitude" : latitude, "longitude" : longitude},
 				    dataType: 'json',
 				    success:function(response){
 				     alertUser(response.error_message);
  				     markerObject.setMap(null);
 				     var index = $.inArray(markerObject,markersArray);
 			             markersArray.splice(index,1);
+				      
+				 },
+				error: function(xhr) {
+				alert("Failure");
+				}
+			});
+
+}
+
+function removeAllMarkers()
+{
+$.ajax({
+				    type: 'GET',
+				    url: '/gmap/delete_all_markers',
+				    dataType: 'json',
+				    success:function(response){
+				     alertUser(response.error_message);
 				      
 				 },
 				error: function(xhr) {

@@ -10,7 +10,7 @@ def save_marker
  end
 
  def delete_marker
-   @markers = Map.find_by_marker_name(params[:marker_name])
+   @markers = Map.find_by_latitude_and_longitude(params[:latitude],params[:longitude])
    @markers.destroy
    return render :json => {:error_message => "Marker Deleted From Database"}
  end
