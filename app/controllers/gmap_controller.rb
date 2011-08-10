@@ -15,4 +15,9 @@ def save_marker
    return render :json => {:error_message => "Marker Deleted From Database"}
  end
 
+def delete_all_markers
+   Map.delete_all
+   return render :json => {:error_message => "All the Markers are Deleted"}
+end
+
 end
