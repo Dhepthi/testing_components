@@ -17,7 +17,11 @@ def save_marker
 
 def delete_all_markers
    Map.delete_all
+   if params[:button_click] == "true"
    return render :json => {:error_message => "All the Markers are Deleted"}
+   else
+   return render :json => {:error_message => "Please Click on Map to Create Marker"}
+ end
 end
 
 end

@@ -49,6 +49,8 @@ $(".google_map").click(function(){
  $("#new_people_form").css("display","none");
  $("#google_form").css("display","block");
  google.maps.event.trigger(map, 'resize');
+$("#sample_map").data("button_click", false);
+ removeAllMarkers();
 });
 
 $(".ajax_feature").click(function(){

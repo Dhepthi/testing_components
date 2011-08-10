@@ -43,6 +43,7 @@
                 }
                 markersArray.length = 0;
             }
+	  $("#sample_map").data("button_click", true);
           removeAllMarkers();
         }
 
@@ -111,6 +112,7 @@ function removeAllMarkers()
 $.ajax({
 				    type: 'GET',
 				    url: '/gmap/delete_all_markers',
+				    data: { "button_click" : $("#sample_map").data("button_click") },
 				    dataType: 'json',
 				    success:function(response){
 				     alertUser(response.error_message);
