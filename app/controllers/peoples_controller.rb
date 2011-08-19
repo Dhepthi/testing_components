@@ -15,7 +15,6 @@ class PeoplesController < ApplicationController
   # GET /peoples/1.xml
   def show
     @people = People.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @people }
@@ -26,7 +25,6 @@ class PeoplesController < ApplicationController
   # GET /peoples/new.xml
   def new
     @people = People.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @people }
@@ -44,9 +42,7 @@ class PeoplesController < ApplicationController
     @people = People.new(params[:people])
     respond_to do |format|
       if @people.save
-	format.js 
-        #format.html { render :action => "edit" }
-        #format.xml  { render :xml => @people, :status => :created, :location => @people }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @people.errors, :status => :unprocessable_entity }
@@ -54,12 +50,10 @@ class PeoplesController < ApplicationController
     end
   end
 
-
   # PUT /peoples/1
   # PUT /peoples/1.xml
   def update
     @people = People.find(params[:id])
-
     respond_to do |format|
       if @people.update_attributes(params[:people])
         format.html { redirect_to(@people, :notice => 'People was successfully updated.', :status => 200) }
@@ -76,7 +70,6 @@ class PeoplesController < ApplicationController
   def destroy
     @people = People.find(params[:id])
     @people.destroy
-
     respond_to do |format|
       format.html { redirect_to(peoples_url) }
       format.xml  { head :ok }
