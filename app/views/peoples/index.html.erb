@@ -1,4 +1,4 @@
-   
+
 <%= stylesheet_link_tag "start/jquery-ui-1.8.14.custom.css" %>
 <%= javascript_include_tag "jquery-ui-1.8.14.custom.min.js"  %>
 <script type="text/javascript">
@@ -12,15 +12,15 @@
 
 </script>
 <style type="text/css">
-			/*demo page css*/
-			body{ font: 62.5% "Trebuchet MS", sans-serif; }
-                        .heading {
-                          font-family: 'Tangerine', serif;
-                          font-size: 48px;
-                          text-shadow: 4px 4px 4px #aaa;
-                          text-align: center;
-                        }
-		</style>
+  /*demo page css*/
+  body{ font: 62.5% "Trebuchet MS", sans-serif; }
+  .heading {
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+    text-align: center;
+  }
+</style>
 <div class="heading">Testing Web Components with Rspec and Capybara</div>
 <div id="accordion" style="width:30%;margin-top:3%">
   <div>
@@ -35,7 +35,7 @@
     <h3><a href="#" class="ajax_feature">Ajax Feature </a></h3>
     <div>Makes an dynamic ajax call and updates the data</div>
   </div>
-   <div>
+  <div>
     <h3><a href="#">Other components </a></h3>
     <div>Other components are added in feature</div>
   </div>
@@ -49,10 +49,10 @@
     <li><a href="#tabs-3">Capybara code</a></li>
   </ul>
   <div id="tabs-1"><div id="alert"></div>
-   <iframe id="ajax_feature" src = "/countries/new" style="width: 500px; height:400px; overflow:hidden;border:none;display:none"></iframe>
-   <div id="new_people_form" style="display:block"><%= render :partial => "new" %></div>
-   <div id="google_form" style="display:none"><%= render :partial => "googlemap" %></div>
-</div>
+    <iframe id="ajax_feature" src = "/countries/new" style="width: 500px; height:400px; overflow:hidden;border:none;display:none"></iframe>
+    <div id="new_people_form" style="display:block"><%= render :partial => "new" %></div>
+    <div id="google_form" style="display:none"><%= render :partial => "googlemap" %></div>
+  </div>
   <div id="tabs-2">Here comes a Rspec code</div>
   <div id="tabs-3">Here comes a Cabybara </div>
 </div>

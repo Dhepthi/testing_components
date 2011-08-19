@@ -1,27 +1,27 @@
 <div id="BodyMsg">
-<h1>Listing peoples</h1>
+  <h1>Listing peoples</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Country</th>
-  </tr>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Country</th>
+    </tr>
 
-<% @peoples.each do |people| %>
-  <tr>
-    <td><%=h people.name %></td>
-    <td><%=h people.address %></td>
-    <td><%=h people.country %></td>
-    <td><%= link_to 'Show', people %></td>
-    <td><%= link_to 'Edit', edit_people_path(people) %></td>
-    <td><%= link_to 'Destroy', people, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+    <% @peoples.each do |people| %>
+      <tr>
+        <td><%=h people.name %></td>
+        <td><%=h people.address %></td>
+        <td><%=h people.country %></td>
+        <td><%= link_to 'Show', people %></td>
+        <td><%= link_to 'Edit', edit_people_path(people) %></td>
+        <td><%= link_to 'Destroy', people, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New people', new_people_path %>
+  <%= link_to 'New people', new_people_path %>
 </div>
 
