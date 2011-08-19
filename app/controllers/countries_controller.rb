@@ -2,20 +2,14 @@ class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.xml
   def index
-#    @countries = Country.all
-#
-#    respond_to do |format|
-#      format.html # index.html.erb
-#      format.xml  { render :xml => @countries }
-#    end
-     @countries = Country.find(:all)
-#     render :json => @countries.to_json
-#     format.js {}
+    @countries = Country.find(:all)
   end
+
   def get_countries_name
-     @countries = Country.find(:all,:select => :name)
-     render :json => @countries.to_json
+    @countries = Country.find(:all,:select => :name)
+    render :json => @countries.to_json
   end
+  
   # GET /countries/1
   # GET /countries/1.xml
   def show
@@ -30,8 +24,8 @@ class CountriesController < ApplicationController
   # GET /countries/new
   # GET /countries/new.xml
   def new
-   @country = Country.new
-   @countries = Country.find(:all)
+    @country = Country.new
+    @countries = Country.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @country }
@@ -47,12 +41,9 @@ class CountriesController < ApplicationController
   # POST /countries.xml
   def create
     @country = Country.new(params[:country])
-
     respond_to do |format|
       if @country.save
-#        format.html { redirect_to(@country, :notice => 'Country was successfully created.') }
         format.js 
-#        format.xml  { render :xml => @country, :status => :created, :location => @country }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @country.errors, :status => :unprocessable_entity }
