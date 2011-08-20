@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  latitude: 
-  longitude: 
+  marker_name: Marker1
+  latitude: 12.677777
+  longitude: 59.00589
 
 two:
-  name: MyString
-  latitude: 
-  longitude: 
+  marker_name: Marker2
+  latitude: 34.56435
+  longitude: 45.76589
