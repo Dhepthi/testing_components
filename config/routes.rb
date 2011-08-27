@@ -1,8 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.connect "/countries/get_countries_name",:controller => :countries, :action => "get_countries_name"
   map.connect "/gmap/save_marker",:controller => :gmap, :action => "save_marker"
- map.connect "/gmap/delete_marker",:controller => :gmap, :action => "delete_marker" 
-map.connect "/gmap/delete_all_markers",:controller => :gmap, :action => "delete_all_markers"
+  map.connect "/gmap/delete_marker",:controller => :gmap, :action => "delete_marker"
+  map.connect "/gmap/delete_all_markers",:controller => :gmap, :action => "delete_all_markers"
+  map.connect "/peoples/get_rspec_and_capybara_code",:controller => :peoples, :action => "get_rspec_and_capybara_code"
   map.resources :countries
 
   map.resources :peoples
@@ -39,7 +40,7 @@ map.connect "/gmap/delete_all_markers",:controller => :gmap, :action => "delete_
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-   map.root :controller => "Peoples"
+  map.root :controller => "Peoples"
 
   # See how all your routes lay out with "rake routes"
 

@@ -46,23 +46,57 @@ $(document).ready(function (){
         $("#ajax_feature").css("display","none");
         $("#google_form").css("display","none");
         $("#new_people_form").css("display","block");
+        $("#tabs").data("RspecName", "peoples");
+        $("#tabs").data("CapybaraName", "people");
+        $('#tabs').tabs( "option", "selected", 0 );
+        loadSpecAndCapybaracode();
     });
 
     $(".google_map").click(function(){
         $("#ajax_feature").css("display","none");
         $("#new_people_form").css("display","none");
         $("#google_form").css("display","block");
+        $("#tabs").data("RspecName", "gmap");
+        $("#tabs").data("CapybaraName", "map");
         google.maps.event.trigger(map, 'resize');
         $("#sample_map").data("button_click", false);
-        removeAllMarkers();
+        removeAllMarkers
+        $('#tabs').tabs( "option", "selected", 0 );
+        loadSpecAndCapybaracode();
     });
 
     $(".ajax_feature").click(function(){
         $("#ajax_feature").css("display","block");
         $("#google_form").css("display","none");
         $("#new_people_form").css("display","none");
+        $("#tabs").data("RspecName", "countries");
+        $("#tabs").data("CapybaraName", "country");
+        $('#tabs').tabs( "option", "selected", 0 );
+        loadSpecAndCapybaracode();
     });
+
 });
+
+
+function loadSpecAndCapybaracode()
+{
+    $.ajax({
+        type: 'post',
+        url: '/peoples/get_rspec_and_capybara_code',
+        data: {
+            "rspec_name" : $("#tabs").data("RspecName"),
+            "capybara_name":$("#tabs").data("CapybaraName")
+        },
+        dataType: 'json',
+        success:function(response){
+            $("#tabs").find("#tabs-2").empty();
+            $("#tabs").find("#tabs-3").empty();
+            $("#tabs").find("#tabs-2").append("<pre id='rspec' style='overflow:auto;'>"+response["rspec_code"]+"</pre>");
+            $("#tabs").find("#tabs-3").append("<pre id='capybara' style='overflow:auto;'>"+response["capybara_code"]+"</pre>");
+             
+        }
+    });
+}
 
 function storeMarkers()
 {
@@ -71,7 +105,7 @@ function storeMarkers()
 
 function load_content_for_tabs(content)
 {
-    $("#tabs").find("#tabs-1").replaceWith(content);
+    $("#tabs").find("#tabs-2").append(content);
 }
 
 function alertUser(message){
@@ -92,4 +126,3 @@ function alertUser(message){
     }
     $('#new_people')[0].reset();
 }
-

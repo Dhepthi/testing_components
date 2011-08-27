@@ -1,5 +1,5 @@
 class PeoplesController < ApplicationController
-
+  include ApplicationHelper
   # GET /peoples
   # GET /peoples.xml
   def index
@@ -14,6 +14,7 @@ class PeoplesController < ApplicationController
   # GET /peoples/1
   # GET /peoples/1.xml
   def show
+
     @people = People.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
@@ -75,5 +76,11 @@ class PeoplesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def get_rspec_and_capybara_code
+    capybara, controller_spec = get_codes_from_file(params[:rspec_name],params[:capybara_name])
+    render :json => {:capybara_code => capybara, :rspec_code => controller_spec}
+  end
+
 
 end

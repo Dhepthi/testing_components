@@ -12,7 +12,7 @@ describe People do
 
   it "should create a new record for Person" do
     visit peoples_path
-    fill_in "people_name", :with => "Dhepthi"
+    fill_in "people_name", :with => "Spritle"
     fill_in "people_address",:with => "Chennai"
     fill_in "people_country_name", :with =>"India"
     page.has_button?("Create")

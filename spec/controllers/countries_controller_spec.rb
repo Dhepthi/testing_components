@@ -19,7 +19,7 @@ describe CountriesController do
     it "assigns all countries as @countries" do
       Country.stub(:find_by_name).with(:all).and_return([mock_country])
       get :get_countries_name
-      @countries = [{"country"=>{"name"=>"France"}}, {"country"=>{"name"=>"India"}}]
+      @countries = [{"country"=>{"name"=>"France"}}, {"country"=>{"name"=>"India"}}, {"country"=>{"name"=>"USA"}}]
       assigns[:countries].should_not be_empty
       JSON.parse(response.body).should == @countries
     end
