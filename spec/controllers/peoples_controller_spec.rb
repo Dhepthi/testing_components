@@ -1,5 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-
+require 'json'
 describe PeoplesController do
 
   def mock_people(stubs={})
@@ -127,5 +127,28 @@ describe PeoplesController do
       response.should redirect_to(peoples_url)
     end
   end
-
+  describe "POST Get Code from file" do
+    hsh = {
+      :people => {
+        :rspec_name => "peoples",
+        :capybara_name =>"people"
+      },
+      :gmap => {
+        :rspec_name => "gmap",
+        :capybara_name =>"map"
+      },
+      :country => {
+        :rspec_name => "countries",
+        :capybara_name =>"country"
+      }
+    }
+     hsh.each do |key, value|
+      it "should read #{value[:rspec_name]}_controller_spec for Rspec code and #{value[:capybara_name]}_spec for Capybara code" do
+        post :get_rspec_and_capybara_code, value
+        result_data = JSON.parse(response.body)
+        result_data["capybara_code"].should_not be_empty
+        result_data["rspec_code"].should_not be_empty
+      end
+    end
+  end
 end
